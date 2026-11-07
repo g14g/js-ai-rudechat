@@ -1,0 +1,267 @@
+/* ==========================================
+1. DEFINIZIONE DEL TEMA GLOBALE (:root)
+========================================== */
+:root {
+    /* Il tuo colore di base */
+    /* --bs-brand-base: oklch(60% 0.25 300); Viola/magenta vivido */
+    /* --bs-brand-base: oklab(60% -0.1 0.01); */
+    --bs-brand-base: oklab(74.041% -0.17155 0.09033);
+
+    /* Varianti semantiche calcolate dal browser */
+    --bs-brand-fg: var(--bs-brand-base);
+    --bs-brand-fg-emphasis: color-mix(in oklch, var(--bs-brand-base) 85%, #121212);
+
+    --bs-brand-bg: var(--bs-brand-base);
+    /* Supporto light/dark automatico per lo sfondo tenue */
+    --bs-brand-bg-subtle: light-dark(color-mix(in oklch, var(--bs-brand-base) 12%, white), color-mix(in oklch, var(--bs-brand-base) 20%, black));
+    --bs-brand-border: color-mix(in oklch, var(--bs-brand-base) 40%, white);
+    --bs-brand-contrast: #ffffff;
+    /* Testo sopra il bottone pieno */
+
+    /* ////////////////////////////// */
+
+    /* Per sovrascrivere il colore del bordo del focus sui campi del form in base al
+    tema colori selezionato in bootstrap (warning) */
+
+    /* --bs-focus-ring-color: var(--bs-yellow-500); */
+    --bs-focus-ring-color: var(--bs-brand-base);
+}
+
+/* ==========================================
+2. IL COMPONENTE BOTTONE (.btn-brand)
+========================================== */
+.btn-brand {
+    /* Stato Normale: assegnazione dei token Bootstrap 6 */
+    /* --bs-btn-color: var(--bs-brand-contrast); */
+    --bs-btn-color: #121212;
+    --bs-btn-bg: var(--bs-brand-base);
+    --bs-btn-border-color: var(--bs-brand-base);
+
+    /* Stato Hover: scurisce leggermente lo sfondo e il bordo di un 15% */
+    /* --bs-btn-hover-color: var(--bs-brand-contrast); */
+    --bs-btn-hover-color: #121212;
+    --bs-btn-hover-bg: color-mix(in oklch, var(--bs-brand-base) 85%, #121212);
+    --bs-btn-hover-border-color: color-mix(in oklch, var(--bs-brand-base) 80%, #121212);
+
+    /* Stato Active (al click): scurisce ancora di più (un 30%) */
+    --bs-btn-active-color: var(--bs-brand-contrast);
+    --bs-btn-active-bg: color-mix(in oklch, var(--bs-brand-base) 70%, #121212);
+    --bs-btn-active-border-color: color-mix(in oklch, var(--bs-brand-base) 65%, #121212);
+
+    /* Focus Ring (accessibilità): alone sfumato attorno al tasto */
+    --bs-btn-focus-shadow-rgb: oklch(60% 0.25 300 / 50%);
+}
+
+.btn-solid:focus-visible {
+    outline: var(--bs-focus-ring-width) solid var(--bs-brand-fg);
+}
+
+/* Variante Outline (.btn-outline-brand) facoltativa */
+.btn-outline-brand {
+    --bs-btn-color: var(--bs-brand-fg);
+    /* --bs-btn-bg: transparent; */
+    --bs-btn-bg: #121212;
+    --bs-btn-border-color: var(--bs-brand-fg);
+
+    /* --bs-btn-hover-color: var(--bs-brand-contrast); */
+    --bs-btn-hover-color: #121212;
+    --bs-btn-hover-bg: var(--bs-brand-base);
+    --bs-btn-hover-border-color: var(--bs-brand-base);
+
+    /* --bs-btn-active-color: var(--bs-brand-contrast); */
+    --bs-btn-active-color: #121212;
+    --bs-btn-active-bg: color-mix(in oklch, var(--bs-brand-base) 85%, #121212);
+    --bs-btn-active-border-color: color-mix(in oklch, var(--bs-brand-base) 85%, #121212);
+}
+
+/* ==========================================
+   3. ALTRE UTILITY UTILI (Es: Alert, Badge, Testi)
+   ========================================== */
+.fg-brand {
+    color: var(--bs-brand-fg) !important;
+}
+
+.bg-brand {
+    background-color: var(--bs-brand-bg) !important;
+}
+
+.bg-brand-subtle {
+    background-color: var(--bs-brand-bg-subtle) !important;
+}
+
+.border-brand {
+    /* border-color: var(--bs-brand-border) !important; */
+    /* border-color: color-mix(in oklch, var(--bs-brand-base) 25%, transparent) !important; */
+    border-color: var(--bs-brand-base) !important;
+}
+
+/* ////////////////////////////// */
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 768px;
+}
+
+header {
+    border-start-start-radius: 4rem;
+    border-start-end-radius: 4rem;
+}
+
+header h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: var(--bs-brand-bg);
+}
+
+header h1 span {
+    color: #ffffff;
+    margin-left: -0.725rem;
+    /* visibility: hidden; */
+    text-shadow: 0px 0px 12px rgba(0, 0, 0, 1);
+}
+
+header img {
+    width: 6rem;
+    aspect-ratio: 1 / 1;
+}
+
+header .img {
+    border-color: var(--bs-brand-base) !important;
+}
+
+header .c-menu {
+    color: #121212;
+    font-size: 3rem;
+}
+
+/* ////////////////////////////// */
+
+footer {
+    border-end-start-radius: 4rem;
+    border-end-end-radius: 4rem;
+}
+
+header,
+footer {
+    background-color: color-mix(in oklch, var(--bs-brand-base) 15%, #121212);
+}
+
+.chat-container {
+    background-color: color-mix(in oklch, var(--bs-brand-base) 15%, #121212);
+    position: relative;
+}
+
+.chat-container::after {
+    /* box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.85) inset; */
+    box-shadow:
+        inset 16px 0px 16px -16px rgba(0, 0, 0, 0.35),
+        inset -16px 0px 16px -16px rgba(0, 0, 0, 0.35),
+        inset 0px 24px 32px -8px rgba(0, 0, 0, 0.65),
+        inset 0px -24px 32px -24px rgba(0, 0, 0, 0.65);
+    content: "";
+    width: calc(100% - 6rem);
+    height: 100%;
+    /* background: red; */
+    display: block;
+    position: absolute;
+    left: 3rem;
+    top: 0;
+    border-start-start-radius: 2rem;
+    border-start-end-radius: 2rem;
+    border-end-start-radius: 2rem;
+    border-end-end-radius: 2rem;
+    border-color: var(--bs-brand-base) !important;
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    pointer-events: none;
+}
+
+.chat-messages {
+    border-start-start-radius: 2rem;
+    border-start-end-radius: 2rem;
+    border-end-start-radius: 2rem;
+    border-end-end-radius: 2rem;
+    /* background-color: #121212; */
+    background-color: color-mix(in oklch, var(--bs-brand-base) 10%, #121212);
+}
+
+.chat-message {
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75);
+}
+
+.chat-message.sent>div,
+.chat-message.sent .triangle {
+    background-color: color-mix(in oklch, var(--bs-brand-base) 50%, #121212);
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+}
+
+/* .chat-message.sent .triangle {
+    transform: translateX(1rem);
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+} */
+
+.chat-message.sent .triangle-svg {
+    color: color-mix(in oklch, var(--bs-brand-base) 50%, #121212);
+    transform: translateX(1rem);
+    width: 1rem;
+    height: 1rem;
+}
+
+.chat-message .triangle-svg svg {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+}
+
+.chat-message.received>div,
+.chat-message.received .triangle {
+    background-color: color-mix(in oklch, var(--bs-brand-base) 25%, #121212);
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+}
+
+/* .chat-message.received .triangle {
+    transform: translateX(-1rem);
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+} */
+
+.chat-message.received .triangle-svg {
+    color: color-mix(in oklch, var(--bs-brand-base) 25%, #121212);
+    transform: translateX(-1rem);
+    width: 1rem;
+    height: 1rem;
+}
+
+.chat-message time {
+    font-size: 0.75rem;
+}
+
+.chat-message.sent time {
+    color: color-mix(in oklch, var(--bs-brand-base) 70%, white);
+}
+
+.chat-message.received time {
+    color: color-mix(in oklch, var(--bs-brand-base) 60%, grey);
+}
+
+.triangle {
+    width: 1rem;
+    height: 1rem;
+}
+
+input {
+    height: 3rem;
+    --bs-control-border-color: var(--bs-brand-base);
+    --bs-control-bg: #121212;
+    border-radius: 1.5rem;
+}
+
+button {
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+}

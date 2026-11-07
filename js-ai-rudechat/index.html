@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESERCIZIO JAVASCRIPT / AI E AJAX / RUDECHAT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container d-flex flex-column vh-100 p-12">
+        <!-- HEADER -->
+        <header class="">
+            <div class="d-flex px-12 py-6 gap-6">
+                <div class="img flex-shrink-0 rounded-circle overflow-hidden border border-2 border-brand">
+                    <img src="./img/g14g.png" alt="" />
+                </div>
+                <div class="d-flex align-items-center flex-grow-1">
+                    <h1 class="m-0">RUDECH<span>IA</span>T</h1>
+                </div>
+                <div class="c-menu d-flex align-items-center gap-6 fg-brand">
+                    <!-- <i class="bi bi-info-circle"></i> -->
+                    <i class="bi bi-info-circle-fill"></i>
+                </div>
+            </div>
+        </header>
+        <!-- CHAT -->
+        <main class="chat-container d-flex flex-grow-1 px-12 overflow-y-auto">
+            <div class="chat-messages d-flex flex-column px-12 py-12 gap-6 flex-grow-1 overflow-y-auto border border-1 border-brand">
+                <div class="chat-message sent d-flex justify-content-end">
+                    <div class="p-4 d-flex flex-column gap-3 rounded-top-9 rounded-start-9 position-relative">
+                        <p class="m-0">Ciao! Come stai?</p>
+                        <time class="align-self-end" datetime="17:13">17:13</time>
+                        <!-- <div class="triangle position-absolute bottom-0 end-0"></div> -->
+                        <div class="triangle-svg position-absolute bottom-0 end-0">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M -25 0 L 85 85 L 0 85 Z" stroke="currentColor" stroke-width="30" stroke-linejoin="round" fill="currentColor" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-message received d-flex justify-content-start">
+                    <div class="p-4 d-flex flex-column gap-3 rounded-top-9 rounded-end-9 position-relative">
+                        <p class="m-0">Che diavolo vuoi? Lasciami in pace!</p>
+                        <time class="align-self-start" datetime="17:15">17:15</time>
+                        <!-- <div class="triangle position-absolute bottom-0 start-0"></div> -->
+                        <div class="triangle-svg position-absolute bottom-0 start-0">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M 15 85 L 125 0 L 125 85 Z" stroke="currentColor" stroke-width="30" stroke-linejoin="round" fill="currentColor" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-message sent d-flex justify-content-end">
+                    <div class="p-4 d-flex flex-column gap-3 rounded-top-9 rounded-start-9 position-relative">
+                        <p class="m-0">Mamma mia che modi... Ma che ti ho fatto?!</p>
+                        <time class="align-self-end" datetime="17:13">17:13</time>
+                        <!-- <div class="triangle position-absolute bottom-0 end-0"></div> -->
+                        <div class="triangle-svg position-absolute bottom-0 end-0">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <path d="M -25 0 L 85 85 L 0 85 Z" stroke="currentColor" stroke-width="30" stroke-linejoin="round" fill="currentColor" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- FOOTER -->
+        <footer class="">
+            <form>
+                <div class="d-flex px-12 py-12 gap-6">
+                    <div class="flex-grow-1">
+                        <input type="text" placeholder="Scrivi un messaggio..." class="input-message form-control" autocomplete="off" />
+                    </div>
+                    <div class="">
+                        <button class="btn-solid btn-brand" type="submit">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </footer>
+    </div>
+
+    <!-- <script src="./script.js"></script> -->
+    <!-- Collego lo script come modulo, in modo da importare la chiave APY_KEY di OpenRouters dal file javascript esterno -->
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
